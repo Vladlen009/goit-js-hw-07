@@ -4,6 +4,8 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 
 
+const divRef = document.querySelector(".gallery");
+
 const galleryRef = document.querySelector('.gallery');
 const cardsImgGallery = createRenderGalleryMarkup(galleryItems);
 galleryRef.insertAdjacentHTML('beforeend', cardsImgGallery);
@@ -42,24 +44,8 @@ function onOpenModal(evt) {
     instance.close()
 }
 
-
-
-// console.log(cardsListMarkap);
-// galleryRef.addEventListener('click', onImgClick);
-// function onImgClick(evt) {
-//     evt.preventDefault();
-//     if (!evt.target.classList.contains('gallery__image')) {
-//         return
-//     };
-//     const imgUrl = evt.target.dataset.source;
-//     onOpenModal(imgUrl);
-// };
-// function onOpenModal(evt) {
-//     const instance = basicLightbox.create(`
-//     <img src=${imgUrl}>`);
-//     instance.show();
-//     document.addEventListener('keydown', OnModalClose);
-//     instance.close()
-// }
-  
-
+function onEscapeClose(evt) {
+    if (evt.code === "Escape") {
+      instance.close();
+    };
+  };
