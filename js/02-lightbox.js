@@ -21,10 +21,12 @@ function onImageClick(event) {
     if (event.target.nodeName !== 'IMG') {
     return
     };
-    let gallery = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: 250,
-      });
-      gallery.on('show.simplelightbox');
+
 }
+
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+gallery.on('show.simplelightbox');
    
